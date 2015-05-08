@@ -1,0 +1,215 @@
+-->//Problem 2
+ 
+-->exec run.sce
+ 
+-->//run.sce
+  
+-->//part a,b
+ 
+-->//run newton and gauss newton methods for dataset   
+ 
+-->exec('C:\Users\Amie\Google Drive\Optimization\HW6\newton.sce', -1)
+ 
+ Newton Method:    
+ 
+!  iter      f(x)      df(x)/dx1    df(x)/dx2  norm(df(x)  !
+ 
+    1.    295.51196    2.7072472    53.726645    53.79481  
+ 
+    2.    288.93945    0.0733317    0.8632630    0.8663720  
+ 
+    3.    288.75196  - 0.0003585  - 0.0048393    0.0048526  
+ 
+    4.    288.75287  - 5.106D-09  - 6.099D-08    6.120D-08  
+ 
+ Solution:    
+ 
+    2.5410457  
+    0.2595048  
+ 
+ 
+-->exec('C:\Users\Amie\Google Drive\Optimization\HW6\newton_gauss.sce', -1)
+ 
+ Gauss-Newton Method   
+ 
+!  iter      f(x)      df(x)/dx1    df(x)/dx2  norm(df(x)  !
+ 
+    1.    290.80614    0.8130811    16.4576    16.477672  
+ 
+    2.    288.75289    0.0000101  - 0.0860851    0.0860851  
+ 
+    3.    288.75285  - 0.0000087    0.0032634    0.0032634  
+ 
+    4.    288.75287  - 1.374D-08  - 0.0001357    0.0001357  
+ 
+    5.    288.75287  - 2.148D-11    0.0000054    0.0000054  
+ 
+    6.    288.75287    8.438D-15  - 0.0000002    0.0000002  
+ 
+ Solution:    
+ 
+    2.5410457  
+    0.2595048  
+ 
+ 
+-->//part c
+ 
+-->//plot the model and scatterplot together to verify the accuarcy of model
+ 
+-->t1=0:.1:10;
+ 
+-->phi=x(1)*exp(x(2)*t1);
+ 
+ 
+-->plot(t1,phi)
+ 
+-->plot(t,y,'+r')
+ 
+ 
+-->xlabel('years')
+ 
+-->ylabel('population of antelope')
+ 
+-->legend('model','observed population')
+  
+-->//part d
+ 
+-->//analyze the performance of the methods by comparing the hessian and approximation used in gauss newton   
+ 
+-->//initial point   
+ 
+-->disp(j0'*j0-h0)
+ 
+  - 1.421D-14    120.6505   
+    120.6505     2212.6151  
+ 
+ 
+-->//& of final point   
+ 
+-->disp(jm'*jm-hm)
+ 
+  - 0.0000001  - 0.0000013  
+  - 0.0000013  - 81.571736  
+ 
+ 
+-->title('Problem 2')
+ 
+
+-->//Problem 3
+ 
+-->exec run.sce
+ 
+-->//run.sce
+  
+-->//part a,b
+ 
+-->//run newton and gauss newton methods for dataset   
+ 
+-->exec('C:\Users\Amie\Google Drive\Optimization\HW6\newton.sce', -1)
+ 
+ Newton Method:    
+ 
+!  iter      f(x)      df(x)/dx1    df(x)/dx2  norm(df(x)  !
+ 
+    1.    747.55987  - 0.1992012  - 10.707871    10.709723  
+ 
+    2.    749.35855    0.0002272    0.0201627    0.0201640  
+ 
+    3.    749.3565    1.460D-09    6.035D-08    6.037D-08  
+ 
+ Solution:    
+ 
+    9.018912   
+    0.1205639  
+ 
+ 
+-->exec('C:\Users\Amie\Google Drive\Optimization\HW6\newton_gauss.sce', -1)
+ 
+ Gauss-Newton Method   
+ 
+!  iter      f(x)      df(x)/dx1    df(x)/dx2  norm(df(x)  !
+ 
+    1.    738.12107  - 1.269142    7.8039382    7.906464  
+ 
+    2.    747.75613  - 0.1733254  - 29.604466    29.604973  
+ 
+    3.    749.26835  - 0.0095851    6.0322313    6.032239  
+ 
+    4.    749.34587  - 0.0011567  - 2.030555    2.0305553  
+ 
+    5.    749.35556  - 0.0001019    0.5956185    0.5956185  
+ 
+    6.    749.35641  - 0.0000096  - 0.1830609    0.1830609  
+ 
+    7.    749.35649  - 0.0000009    0.0554799    0.0554799  
+ 
+    8.    749.3565  - 8.176D-08  - 0.0168864    0.0168864  
+ 
+    9.    749.3565  - 7.555D-09    0.0051330    0.0051330  
+ 
+    10.    749.3565  - 6.986D-10  - 0.0015609    0.0015609  
+ 
+    11.    749.3565  - 6.461D-11    0.0004746    0.0004746  
+ 
+    12.    749.3565  - 5.926D-12  - 0.0001443    0.0001443  
+ 
+    13.    749.3565  - 5.969D-13    0.0000439    0.0000439  
+ 
+    14.    749.3565  - 4.263D-14  - 0.0000133    0.0000133  
+ 
+    15.    749.3565  - 2.132D-14    0.0000041    0.0000041  
+ 
+    16.    749.3565  - 7.105D-15  - 0.0000012    0.0000012  
+ 
+    17.    749.3565    2.842D-14    0.0000004    0.0000004  
+ 
+ Solution:    
+ 
+    9.018912   
+    0.1205639  
+ 
+ 
+-->//part c
+ 
+-->//plot the model and scatterplot together to verify the accuarcy of model
+ 
+-->t1=0:.1:10;
+ 
+-->phi=x(1)*exp(x(2)*t1);
+ 
+ 
+-->plot(t1,phi)
+ 
+-->plot(t,y,'+r')
+ 
+ 
+-->xlabel('years')
+ 
+-->ylabel('population of antelope')
+ 
+-->legend('model','observed population')
+ 
+-->//part d
+ 
+-->//analyze the performance of the methods by comparing the hessian and approximation used in gauss newton   
+ 
+-->//initial point
+  
+-->disp(j0'*j0-h0)
+ 
+    0.           23.523243  
+    23.523243  - 258.30009  
+ 
+ 
+//& of final point   
+ 
+-->disp(jm'*jm-hm)
+ 
+    7.095D-09    0.0000002  
+    0.0000002  - 2472.0534  
+ 
+ 
+-->title('Problem 3')
+ 
+
+-->diary(0)
